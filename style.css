@@ -1,1 +1,158 @@
 /* Add your CSS here */
+
+/* Hero section styles */
+header {
+  /* Intel blue background */
+  background: #0071c5;
+  /* Add some padding above and below */
+  padding: 40px 0 32px 0;
+  /* Make text centered */
+  text-align: center;
+  /* Make sure content stands out */
+  color: #fff;
+}
+
+/* Container inside header for layout */
+header > div {
+  /* Limit width for better appearance */
+  max-width: 600px;
+  margin: 0 auto;
+  /* Add some horizontal padding */
+  padding: 0 16px;
+}
+
+/* Intel logo styles */
+header img {
+  /* Set a reasonable width for the logo */
+  width: 120px;
+  /* Add some space below the logo */
+  margin-bottom: 16px;
+  /* Display block to center with margin auto */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main headline styles */
+header h1 {
+  /* Larger font for headline */
+  font-size: 2.2em;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  /* Good contrast on blue */
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Subheading/description styles */
+header p {
+  /* Slightly larger text for subheading */
+  font-size: 1.15em;
+  margin: 0 auto 0 auto;
+  /* Softer white for less contrast than headline */
+  color: #e3f2fd;
+  max-width: 500px;
+}
+
+/* Timeline container styles */
+.timeline {
+  /* Show a horizontal scrollbar if needed */
+  overflow-x: auto;
+  /* Prevent cards from wrapping to the next line */
+  white-space: nowrap;
+  /* Add some padding for better appearance */
+  padding: 20px 0;
+  /* Optional: Add a bottom border to separate the timeline */
+  border-bottom: 1px solid #ccc;
+  /* Smooth scrolling when using scroll or arrow keys */
+  scroll-behavior: smooth;
+}
+
+/* Timeline card styles */
+.timeline-card {
+  /* Display cards inline, side by side */
+  display: inline-block;
+  /* Set a fixed width for each card */
+  width: 250px;
+  /* Add some margin between cards */
+  margin-right: 16px;
+  /* Light background for cards */
+  background: #f9f9f9;
+  /* Add padding inside the card */
+  padding: 16px;
+  /* Rounded corners for cards */
+  border-radius: 8px;
+  /* Add a subtle shadow */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  /* Align cards to the top */
+  vertical-align: top;
+  position: relative; /* Needed for overlay positioning */
+}
+
+/* Make images inside timeline cards fit the card width */
+.timeline-card img {
+  /* Image will not be wider than the card */
+  width: 100%;
+  /* Keep image aspect ratio */
+  height: auto;
+  /* Add some space below the image */
+  margin-bottom: 12px;
+  /* Rounded corners for images */
+  border-radius: 4px;
+  display: block;
+}
+
+/* Style for the extra info overlay */
+.card-extra {
+  /* Position over the image */
+  position: absolute;
+  top: 40px; /* Adjust to match image position */
+  left: 16px;
+  right: 16px;
+  /* Only show when hovering */
+  display: none;
+  /* Overlay background with some transparency */
+  background: rgba(0, 113, 197, 0.92); /* Intel blue, mostly opaque */
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.98em;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Show the overlay when hovering over the card */
+.timeline-card:hover .card-extra {
+  display: block;
+}
+
+/* Remove margin from the last card */
+.timeline-card:last-child {
+  margin-right: 0;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .timeline {
+    /* Allow cards to stack vertically on small screens */
+    white-space: normal;
+    overflow-x: visible;
+    border-bottom: none;
+    padding: 0;
+  }
+  .timeline-card {
+    /* Make cards take full width */
+    display: block;
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+  .timeline-card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Optional: show a pointer cursor on hover for interactivity */
+.timeline-card:hover {
+  cursor: pointer;
+  background: #e0f7fa;
+}
