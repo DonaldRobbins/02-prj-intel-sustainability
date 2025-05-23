@@ -87,6 +87,7 @@ header p {
   /* Align cards to the top */
   vertical-align: top;
   position: relative; /* Needed for overlay positioning */
+  font-size: 0.85em; /* Smaller text for card content */
 }
 
 /* Make images inside timeline cards fit the card width */
@@ -102,23 +103,23 @@ header p {
   display: block;
 }
 
-/* Style for the extra info overlay */
+/* Style for the extra info overlay inside the image area */
 .card-extra {
   /* Position over the image */
   position: absolute;
-  top: 40px; /* Adjust to match image position */
+  top: 40px;         /* Start a bit below the top of the card */
   left: 16px;
   right: 16px;
-  /* Only show when hovering */
-  display: none;
-  /* Overlay background with some transparency */
-  background: rgba(0, 113, 197, 0.92); /* Intel blue, mostly opaque */
+  display: none;     /* Hidden by default */
+  background: rgba(0, 113, 197, 0.92); /* Intel blue with transparency */
   color: #fff;
   padding: 10px;
   border-radius: 6px;
-  font-size: 0.98em;
+  font-size: 0.75em;
   text-align: center;
   z-index: 2;
+  word-break: break-word; /* Ensure long words wrap */
+  white-space: normal;    /* Allow text to wrap */
 }
 
 /* Show the overlay when hovering over the card */
@@ -129,6 +130,16 @@ header p {
 /* Remove margin from the last card */
 .timeline-card:last-child {
   margin-right: 0;
+}
+
+p {
+  display: block;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  word-break: break-word; /* Break long words and wrap text */
+  white-space: normal;    /* Allow text to wrap normally */
 }
 
 /* Responsive styles for small screens */
@@ -155,4 +166,6 @@ header p {
 .timeline-card:hover {
   cursor: pointer;
   background: #e0f7fa;
+  
+ 
 }
